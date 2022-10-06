@@ -1,10 +1,11 @@
-import { owl } from "@odoo/owl";
-const { utils, mount, router, QWeb } = owl;
-import { App  } from "./components/App";
+import {owl} from '@odoo/owl';
+
+const {utils, mount} = owl;
+import {App} from './App'
 
 
 async function setup() {
-  mount(App, { target: document.body });
+    mount(App, {target: document.body})
 }
 
-utils.whenReady(setup);
+utils.whenReady(setup)

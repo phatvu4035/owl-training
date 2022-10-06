@@ -5,7 +5,7 @@
   "main": "src/index.html",
   "scripts": {
     "test": "jest",
-    "build": "webpack --mode development",
+    "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development"
   },
   "author": "Someone",
@@ -28,17 +28,23 @@
     "@odoo/owl": "^1.0.4"
   },
   "babel": {
-    "plugins": ["@babel/plugin-proposal-class-properties"],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ],
     "env": {
       "test": {
-        "plugins": ["transform-es2015-modules-commonjs"]
+        "plugins": [
+          "transform-es2015-modules-commonjs"
+        ]
       }
     }
   },
   "jest": {
     "verbose": false,
     "testRegex": "(/tests/.*(test|spec))\\.js?$",
-    "moduleFileExtensions": ["js"],
+    "moduleFileExtensions": [
+      "js"
+    ],
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
     }

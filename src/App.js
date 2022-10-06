@@ -1,18 +1,18 @@
-import { Component, tags, hooks } from "@odoo/owl";
-import { MyContent1, MyContent2 } from "./components/MyContent";
+import {owl} from '@odoo/owl';
 
-const RouteComponent = router.RouteComponent;
-
-const useComponent = hooks.useComponent
+const {Component, tags} = owl;
+import {MyContent1, MyContent2} from './components/MyContent'
 
 
-const APP_TEMPLATE = tags.xml/*xml*/ `
-<main t-name="App" class="">
-  
-</main>
-`;
-
+const APP_TEMPLATE = tags.xml`
+    <div>
+        <h3>APP ROOT</h3>
+        <MyContent1 conten1_props="'Im Content 1'" />
+        <MyContent2 />
+    </div>
+`
 export class App extends Component {
-  static template = APP_TEMPLATE;
-  static components = { MyContent1, MyContent2};
+    static template = APP_TEMPLATE
+
+    static components = {MyContent1, MyContent2}
 }
